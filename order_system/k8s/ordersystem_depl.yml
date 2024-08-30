@@ -4,13 +4,13 @@ metadata:
   name: ordersystem-deployment
   namespace: sse
 spec:
-  replicas: 2
-  selector:
+  replicas: 2 
+  selector: 
     matchLabels:
-      app: ordersystem
-  template:
+        app: ordersystem
+  template: # template : pod 정의
     metadata:
-      labels:
+      labels: 
         app: ordersystem
     spec:
       containers:
@@ -24,49 +24,49 @@ spec:
             limits:
               cpu: "1"
               memory: "500Mi"
-            # 최소 할당량
+          # 최소 할당가능량
             requests:
-             cpu: "0.5"
-             memory: "250Mi"
+              cpu: "0.5"
+              memory: "250Mi"
           env:
           - name: REDIS_HOST
             valueFrom:
-            secretKeyRef:
-              key: REDIS_HOST
-              name: seho-app-secrets
-              
+              secretKeyRef:
+                key: REDIS_HOST
+                name: seho-app-secrets
           - name: DB_HOST
             valueFrom:
-            secretKeyRef:
-              key: DB_HOST
-              name: seho-app-secrets
-              
+              secretKeyRef:
+                key: DB_HOST
+                name: seho-app-secrets
+          - name: DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+                key: DB_USERNAME
+                name: seho-app-secrets
           - name: DB_PASSWORD
             valueFrom:
-            secretKeyRef:
-              key: DB_PASSWORD
-              name: seho-app-secrets
-              
+              secretKeyRef:
+                key: DB_PASSWORD
+                name: seho-app-secrets
           - name: JWT_SECRET
             valueFrom:
-            secretKeyRef:
-              key: JWT_SECRET
-              name: seho-app-secrets
-              
+              secretKeyRef:
+                key: JWT_SECRET
+                name: seho-app-secrets
           - name: JWT_SECRET_RT
             valueFrom:
-            secretKeyRef:
-              key: JWT_SECRET_RT
-              name: seho-app-secrets
-              
+              secretKeyRef:
+                key: JWT_SECRET_RT
+                name: seho-app-secrets
           - name: AWS_ACCESS_KEY
             valueFrom:
-            secretKeyRef:
-              key: AWS_ACCESS_KEY
-              name: seho-app-secrets
-              
+              secretKeyRef:
+                key: AWS_ACCESS_KEY
+                name: seho-app-secrets
           - name: AWS_SECRET_KEY
             valueFrom:
-            secretKeyRef:
-              key: AWS_SECRET_KEY
-              name: seho-app-secrets
+              secretKeyRef:
+                key: AWS_SECRET_KEY
+                name: seho-app-secrets
+                

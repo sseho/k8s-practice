@@ -38,5 +38,5 @@ jobs:
           REPOSITORY: seho-ordersystem
         run: |
           docker build -t $REGISTRY/$REPOSITORY:latest \
-          -f ./ordersystem/Dockerfile ./ordersystem
+          -f ./ordersystem/Dockerfile ./order_system
           docker push $REGISTRY/REPOSITORY:latest

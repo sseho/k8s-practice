@@ -40,3 +40,5 @@ jobs:
           docker build -t $REGISTRY/$REPOSITORY:latest \
           -f ./order_system/Dockerfile ./order_system
           docker push $REGISTRY/$REPOSITORY:latest
+
+           

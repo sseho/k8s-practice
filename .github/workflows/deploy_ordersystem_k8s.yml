@@ -40,5 +40,8 @@ jobs:
           docker build -t $REGISTRY/$REPOSITORY:latest \
           -f ./order_system/Dockerfile ./order_system
           docker push $REGISTRY/$REPOSITORY:latest
-
-           
+# 나중에 namespace는 없애도 된다 
+      - name: eks kubectl apply
+        run: |
+          kubectl apply -f ./order_system/k8s/ordersystem_depl.yml
+          kubectl rollout restart deployment ordersystem-deployment -n sse

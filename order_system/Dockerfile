@@ -15,8 +15,8 @@ COPY build.gradle .
 COPY settings.gradle .
 
 #권한 없을경우
-# RUN chmod 777 gradlew
 
+RUN chmod 777 gradlew
 RUN ./gradlew bootJar
 
 #두번째 스테이지

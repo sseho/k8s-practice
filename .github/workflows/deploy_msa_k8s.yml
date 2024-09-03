@@ -74,4 +74,3 @@ jobs:
           kubectl apply -f ./msa/product/k8s/product_depl.yml
           kubectl rollout restart deployment product-deployment -n sse
           
-
